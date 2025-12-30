@@ -18,7 +18,6 @@ The system retrieves grounded evidence from provided documents and produces **fa
 
 ## Project Structure
 
-```text
 langgraph_jpm2025/
 │
 ├── graph/
@@ -43,7 +42,6 @@ langgraph_jpm2025/
 ├── requirements.txt
 ├── .env.example
 └── README.md
-````
 
 ---
 
