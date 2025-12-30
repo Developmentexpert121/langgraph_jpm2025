@@ -1,0 +1,26 @@
+# Python environment
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.swp
+*.swo
+
+# Environment variables
+.env
+.env.*
+
+# Data / storage
+data/images/           # Ignore all extracted images
+storage/chunks.json    # Optional: can ignore if regenerated
+data/processed/        # Optional: ignore processed JSON files
+
+# IDE / editor
+.vscode/
+.idea/
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
