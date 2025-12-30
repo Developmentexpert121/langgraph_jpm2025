@@ -18,6 +18,7 @@ The system retrieves grounded evidence from provided documents and produces **fa
 
 ## Project Structure
 
+```text
 langgraph_jpm2025/
 │
 ├── graph/
@@ -42,6 +43,7 @@ langgraph_jpm2025/
 ├── requirements.txt
 ├── .env.example
 └── README.md
+````
 
 ---
 
@@ -138,7 +140,7 @@ python -m ingestion.chunker \
   --overlap 100
 ```
 
-Chunking defaults:
+**Chunking defaults:**
 
 * Chunk size: 500–700 tokens
 * Overlap: ~15%
@@ -154,7 +156,7 @@ Once chunks are generated, run all evaluation questions:
 python -m graph.run_all_questions
 ```
 
-Purpose:
+**Purpose:**
 
 * Retrieves top-ranked chunks per question
 * Separates forecast vs mid-year context
@@ -171,7 +173,7 @@ python -m graph.workflow
 
 **Example Usage:**
 
-```
+```text
 JPM Outlook LangGraph RAG
 Type your question and press Enter.
 Type 'exit' anytime to quit.
@@ -194,8 +196,6 @@ Specific stocks/groups:
 - Emerging Markets: Taiwan, India, Indonesia, Mexico (Pages 12-12)
 ```
 
-You can ask questions one by one, and the system will generate citation-grounded answers.
-
 ---
 
 ## Answers to Evaluation Questions
@@ -206,30 +206,30 @@ According to the Outlook 2025 report, the following major equity market themes w
 
 1. **Easing Global Policy**
    Global central banks were expected to cut rates, creating a supportive environment for economic growth and benefiting areas such as U.S. housing and European productivity.
-   (Outlook 2025 | Pages 7–7)
+   *(Outlook 2025 | Pages 7–7)*
 
 2. **Accelerating Capital Investment**
    Significant investments were forecast in artificial intelligence, power and energy, and security infrastructure, requiring substantial capital deployment.
-   (Outlook 2025 | Pages 7–7)
+   *(Outlook 2025 | Pages 7–7)*
 
 3. **Understanding Election Impacts**
    Election outcomes, particularly in the U.S., were expected to influence sovereign debt trajectories, fiscal policy, and taxation.
-   (Outlook 2025 | Pages 7–7)
+   *(Outlook 2025 | Pages 7–7)*
 
 4. **Renewing Portfolio Resilience**
    Investors were encouraged to focus on income generation and downside protection to withstand macroeconomic volatility.
-   (Outlook 2025 | Pages 7–7)
+   *(Outlook 2025 | Pages 7–7)*
 
 5. **Evolving Investment Landscapes**
    New opportunities such as evergreen alternatives, sports investing, and changing urban dynamics driven by work-life shifts were highlighted.
-   (Outlook 2025 | Pages 7–7)
+   *(Outlook 2025 | Pages 7–7)*
 
 **Highlighted stocks / regions:**
 
 * U.S. large-cap stocks with stable margins and shareholder returns
 * Japanese corporations benefiting from improved governance
 * Emerging markets including India, Taiwan, Indonesia, and Mexico
-  (Outlook 2025 | Pages 12–12)
+  *(Outlook 2025 | Pages 12–12)*
 
 ---
 
@@ -238,18 +238,18 @@ According to the Outlook 2025 report, the following major equity market themes w
 **Themes that played out as expected:**
 
 1. Consumer spending remained resilient.
-   (Mid-Year Outlook | Page 12)
+   *(Mid-Year Outlook | Page 12)*
 
 2. Labor markets continued to show strength.
-   (Mid-Year Outlook | Page 34)
+   *(Mid-Year Outlook | Page 34)*
 
 **Themes that disappointed or underperformed:**
 
 1. Economic growth was slower than initially anticipated.
-   (Mid-Year Outlook | Page 13)
+   *(Mid-Year Outlook | Page 13)*
 
 2. Market volatility was higher than expected.
-   (Mid-Year Outlook | Page 36)
+   *(Mid-Year Outlook | Page 36)*
 
 ---
 
@@ -261,21 +261,21 @@ According to the Outlook 2025 report, the following major equity market themes w
 
 * **Microsoft**
   Expected to benefit strongly from AI-driven cloud demand, contributing nearly half of a 35% growth rate in its cloud business.
-  (Mid-Year 2025 | Page 26)
+  *(Mid-Year 2025 | Page 26)*
 
 * **Magnificent 7**
   Projected to deliver 15% EPS growth versus 8% for the rest of the market.
-  (Mid-Year 2025 | Page 14)
+  *(Mid-Year 2025 | Page 14)*
 
 **Mid-Year 2025 Reality:**
 
 * **Microsoft**
   Confirmed as an AI leader with strong cloud growth driven by AI workloads.
-  (Mid-Year 2025 | Page 26)
+  *(Mid-Year 2025 | Page 26)*
 
 * **Magnificent 7**
   Underperformed year-to-date due to capex concerns but retained strong earnings and attractive valuations.
-  (Mid-Year 2025 | Page 14)
+  *(Mid-Year 2025 | Page 14)*
 
 ---
 
@@ -286,13 +286,13 @@ According to the Outlook 2025 report, the following major equity market themes w
 * Rising recession risks
 * U.S. policy uncertainty
 * Two-way risks to growth and inflation
-  (Mid-Year Outlook | Pages 2–4)
+  *(Mid-Year Outlook | Pages 2–4)*
 
 **Risks realized by mid-year:**
 
 * Global growth showed signs of slowing
 * Policy uncertainty remained elevated
-  (Mid-Year Outlook | Pages 2–3)
+  *(Mid-Year Outlook | Pages 2–3)*
 
 ---
 
@@ -305,7 +305,6 @@ According to the Outlook 2025 report, the following major equity market themes w
 | Portfolio Resilience            | Focus on downside protection         | Volatility reinforced resilience need     | Yes       |
 
 ---
-
 
 ## Technology Choices
 
@@ -322,7 +321,7 @@ According to the Outlook 2025 report, the following major equity market themes w
 * Overlap: ~15%
 * Chunked along semantic boundaries
 
-Benefits:
+**Benefits:**
 
 * Higher retrieval precision
 * Faithful citations
@@ -355,13 +354,13 @@ Benefits:
 
 ## Limitations and Future Improvements
 
-**Current limitations:**
+### Current Limitations
 
 * No contradiction resolution
 * No per-answer confidence score
 * Static question set
 
-**Potential enhancements:**
+### Potential Enhancements
 
 * Evidence-strength scoring
 * Cross-document contradiction detection
